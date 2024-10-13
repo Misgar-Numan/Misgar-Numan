@@ -1,40 +1,69 @@
-<h1 align="center">Hello There 👋<br>I'm Mohd Numan Asgar</h1>
+```c
+#include <life.h>
 
-### 
+#define GREETINGS "HELLO THERE 👋🏻"
 
-<h2 align="left">About Me</h2>
+// Defining my profile structure like a program because why not?
+typedef struct {
+    char* Name;         // The one and only
+    char* DOB;          // Date of Birth (or as I like to call it, my annual upgrade)
+    char* Location;     // Currently residing (not hiding, I promise)
+    char* Host;         // My Educational Home
+    char* Major;        // The thing I'm "majorly" trying to master
+    struct {
+        char* real[4];
+        char* programming[3];
+        char* computer[3];
+    } Languages;
+    char* Interests[3];
+    struct {
+        char* Instagram;
+        char* Discord;
+    } Connect;
+} Profile;
 
-###
+void getProfileDetails(Profile* Me) {
+    Me->Name = "Mohd Numan Asgar";
+    Me->DOB = "2004-10-05";
+    Me->Location = "Anantnag, Jammu and Kashmir";
+    Me->Host = "SHMM Govt. Degree College Anantnag, University of Kashmir";
+    Me->Major = "Computer Applications";
 
-<p align="left">I am currently pursuing a major in Computer Applications at GDC Anantnag, University of Kashmir. My passion lies in coding, with a keen interest in both front-end and back-end development. I am constantly exploring new technologies to enhance my skill set and contribute to open-source projects.</p>
+    // Real languages I speak (no, I don't speak emoji... yet)
+    Me->Languages.real[0] = "English";  
+    Me->Languages.real[1] = "Hindi";    
+    Me->Languages.real[2] = "Urdu";      
+    Me->Languages.real[3] = "Kashmiri";  
 
-###
+    // Programming languages (aka my secret languages that my friends don’t understand)
+    Me->Languages.programming[0] = "C/C++";  
+    Me->Languages.programming[1] = "JavaScript";  
+    Me->Languages.programming[2] = "Python";  
 
-<h3 align="left">Connect with Me</h3>
+    // Computer languages (the ones I write on my keyboard instead of speaking)
+    Me->Languages.computer[0] = "HTML";  
+    Me->Languages.computer[1] = "CSS";   
+    Me->Languages.computer[2] = "Markdown";  
 
-###
+    // Interests that might make me sound cooler (or nerdier)
+    Me->Interests[0] = "Programming";  
+    Me->Interests[1] = "Gaming";  
+    Me->Interests[2] = "Swimming";  
 
-<div align="left">
-  <a href="https://www.linkedin.com/in/mohd-numan-asgar" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="50" height="35" alt="LinkedIn logo" />
-  </a>
-  <a href="https://twitter.com/misgar_numan" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="50" height="35" alt="Twitter logo" />
-  </a>
-  <a href="https://www.instagram.com/misgar_numan/" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="50" height="35" alt="Instagram logo" />
-  </a>
-  <a href="https://www.facebook.com/misgar.numan.1" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg" width="50" height="35" alt="Facebook logo" />
-  </a>
-</div>
+    // How to reach me in case you want to talk about programming or pizza
+    Me->Connect.Instagram = "misgar_numan";
+    Me->Connect.Discord = "misgar_numan";
+}
 
-###
+int main() {
+    Profile* Me = (Profile*)malloc(sizeof(Profile)); // Allocating space for my awesome self
 
-<h3 align="left">My GitHub Stats</h3>
+    getProfileDetails(Me);
 
-###
+    // Here, we could add code to display my profile, but let’s keep it a mystery for now
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Misgar-Numan&hide_title=false&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dark&locale=en&hide_border=false&order=1" height="200" alt="GitHub Stats" />
-</div>
+    free(Me);  // Freeing up the space because even my memory needs a break!
+
+    return 0;  // Ending the program, but not the fun!
+}
+```
